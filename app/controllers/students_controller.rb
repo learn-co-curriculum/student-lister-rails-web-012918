@@ -9,9 +9,11 @@ class StudentsController < ApplicationController
 
   def new
     @student = Student.new
+
   end
 
   def create
+    byebug
     Student.create(student_params)
     redirect_to students_path
   end
