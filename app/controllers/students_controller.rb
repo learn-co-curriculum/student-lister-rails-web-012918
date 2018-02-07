@@ -1,10 +1,11 @@
 class StudentsController < ApplicationController
+  before_action :is_authenticated?, only: [:new, :create]
+
   def index
     @students = Student.all
   end
 
   def show
-    session[:variety] = 'peanut_butter'
     @student = Student.find_by(id: params[:id])
   end
 
@@ -14,7 +15,7 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(student_params)
-    byebug
+
     if @student.save
       redirect_to @student
     else

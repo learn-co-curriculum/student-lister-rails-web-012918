@@ -6,6 +6,10 @@
   <% end %>
 <% end %>
 
+<% if flash[:message] %>
+  <p><%=flash[:message]%></p>
+<% end %>
+
 <%= form_for @student, html: {class: 'ui form'} do |f| %>
   <div class="field">
     <%= f.text_field(:name, placeholder: 'Enter the student name...') %>

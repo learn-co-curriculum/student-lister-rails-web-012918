@@ -1,6 +1,8 @@
 
 <h1>All Students</h1>
-<h1><%= session[:variety] %></h1>
+<% if current_user %>
+  <h1>Welcome <%= current_user.username %></h1>
+<% end %>
 <div class= 'ui huge middle aligned selection divided list'>
   <% @students.each do |student| %>
     <div class="item">

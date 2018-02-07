@@ -1,5 +1,9 @@
 <h1>Login</h1>
 
+<% if flash[:message] %>
+  <p><%=flash[:message]%></p>
+<% end %>
+
 <%= form_tag '/login', {class: 'ui form'}  do %>
 
   <div class="field">
