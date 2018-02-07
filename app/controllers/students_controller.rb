@@ -4,6 +4,7 @@ class StudentsController < ApplicationController
   end
 
   def show
+    session[:variety] = 'peanut_butter'
     @student = Student.find_by(id: params[:id])
   end
 
@@ -13,9 +14,9 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(student_params)
-
+    byebug
     if @student.save
-      redirect_to students_path
+      redirect_to @student
     else
       render :new
     end

@@ -1,0 +1,11 @@
+<h1>Login</h1>
+
+<%= form_tag '/login', {class: 'ui form'}  do %>
+
+  <div class="field">
+    <label for="username">Username</label>
+    <%= text_field_tag :username %>
+  </div>
+
+  <%= submit_tag 'Login', {class: 'ui huge yellow button'} %>
+<% end %>
