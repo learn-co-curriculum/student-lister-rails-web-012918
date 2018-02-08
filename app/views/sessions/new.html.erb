@@ -8,8 +8,13 @@
 
   <div class="field">
     <label for="username">Username</label>
-    <%= text_field_tag :username %>
+    <%= text_field_tag :'user[username]' %>
   </div>
 
-  <%= submit_tag 'Login', {class: 'ui huge yellow button'} %>
+  <div class="field">
+    <label for="password">Password</label>
+    <%= password_field_tag :'user[password_digest]' %>
+  </div>
+
+  <%= submit_tag 'Login', {class: 'ui huge inverted pink button'} %>
 <% end %>
